@@ -186,6 +186,11 @@ public class Signature {
         return authorization.trim();
     }
 
+    public boolean verify(SignatureVerifier verifier, String signingBase) {
+        boolean verified = verifier.verify(signingBase, getSignature());
+        return verified;
+    }
+
     @Override
     public String toString() {
         return "Signature " +
